@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react'
 import BenchImage from '../assets/skamy.jpeg'
 
+type Props = {
+  onBackToGifts: () => void
+}
+
 const floatingGifts = [
   { id: 1, icon: '🎁', top: '8%', left: '12%', delay: '0s' },
   { id: 2, icon: '✨', top: '18%', left: '78%', delay: '0.2s' },
@@ -10,7 +14,7 @@ const floatingGifts = [
   { id: 6, icon: '✨', top: '28%', left: '58%', delay: '0.8s' },
 ]
 
-const BenchScene = () => {
+const BenchScene = ({ onBackToGifts }: Props) => {
   const [isGone, setIsGone] = useState(false)
 
   useEffect(() => {
@@ -51,6 +55,13 @@ const BenchScene = () => {
           <h2 className="text-4xl font-bold leading-tight text-rose-950 max-md:text-3xl">
             Скамья так скамья
           </h2>
+          <button
+            type="button"
+            className="mt-6 rounded-[1.25rem] border border-rose-300 bg-white px-5 py-3 text-sm font-semibold text-rose-900 transition hover:-translate-y-0.5 hover:bg-rose-50 focus:outline-none focus:ring-2 focus:ring-rose-300"
+            onClick={onBackToGifts}
+          >
+            Хочу второй подарок
+          </button>
         </div>
       )}
     </div>

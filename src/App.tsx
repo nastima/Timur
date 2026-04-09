@@ -66,6 +66,10 @@ function App() {
     setScreen('bench')
   }
 
+  const handleBackToGifts = () => {
+    setScreen('gift')
+  }
+
   return (
     <main className="relative flex min-h-screen w-full items-center justify-center overflow-hidden p-8 max-md:p-4">
       <div className="pointer-events-none absolute left-[-8rem] top-[-6rem] h-64 w-64 rounded-full bg-rose-200/40 blur-3xl" />
@@ -83,9 +87,9 @@ function App() {
             onSelectPayment={handleOpenPayment}
           />
         ) : screen === 'payment' ? (
-          <PaymentScene />
+          <PaymentScene onBackToGifts={handleBackToGifts} />
         ) : screen === 'bench' ? (
-          <BenchScene />
+          <BenchScene onBackToGifts={handleBackToGifts} />
         ) : screen === 'quiz' ? (
           <QuestionCard
             question={currentQuestion}

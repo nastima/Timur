@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react'
 
-const PaymentScene = () => {
+type Props = {
+  onBackToGifts: () => void
+}
+
+const PaymentScene = ({ onBackToGifts }: Props) => {
   const [progress, setProgress] = useState(0)
 
   useEffect(() => {
@@ -55,6 +59,14 @@ const PaymentScene = () => {
             ? 'Перевод успешно отправлен.'
             : 'Денежки уже бегут, подожди еще чуть-чуть.'}
         </div>
+
+        <button
+          type="button"
+          className="mt-6 w-full rounded-[1.25rem] border border-rose-300 bg-white px-5 py-3 text-sm font-semibold text-rose-900 transition hover:-translate-y-0.5 hover:bg-rose-50 focus:outline-none focus:ring-2 focus:ring-rose-300"
+          onClick={onBackToGifts}
+        >
+          Хочу второй подарок
+        </button>
       </div>
     </div>
   )
