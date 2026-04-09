@@ -1,0 +1,123 @@
+.final-result {
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  padding: 32px;
+  border-radius: 24px;
+  overflow: hidden;
+  background-position: right 24px center;
+  background-repeat: no-repeat;
+  background-size: min(42%, 260px);
+}
+
+.final-result__content {
+  max-width: 55%;
+}
+
+.final-result__button {
+  margin-top: 24px;
+  padding: 12px 18px;
+  border: 0;
+  border-radius: 999px;
+  background: #111827;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+}
+
+.final-result__button:hover {
+  opacity: 0.92;
+}
+
+.question-card-shake {
+  animation: question-card-shake 0.35s ease-in-out;
+}
+
+.scene-enter {
+  animation: scene-enter 0.5s ease-out;
+}
+
+.bench-gift {
+  animation: bench-gift-float 1.8s ease-in-out infinite;
+}
+
+.bench-card {
+  animation: bench-card-fade 1.8s ease-in forwards;
+}
+
+@keyframes question-card-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-10px);
+  }
+  40% {
+    transform: translateX(10px);
+  }
+  60% {
+    transform: translateX(-8px);
+  }
+  80% {
+    transform: translateX(8px);
+  }
+}
+
+@keyframes scene-enter {
+  0% {
+    opacity: 0;
+    transform: translateY(16px) scale(0.985);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes bench-gift-float {
+  0% {
+    transform: translateY(20px) scale(0.85);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-10px) scale(1);
+  }
+  100% {
+    transform: translateY(-28px) scale(1.08);
+    opacity: 0;
+  }
+}
+
+@keyframes bench-card-fade {
+  0% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(0.98) rotate(-1deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.88) rotate(-3deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .final-result {
+    min-height: 480px;
+    align-items: flex-start;
+    padding: 24px;
+    background-position: center bottom 24px;
+    background-size: min(70%, 240px);
+  }
+
+  .final-result__content {
+    max-width: 100%;
+    padding-bottom: 220px;
+  }
+}
